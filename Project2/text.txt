@@ -1,0 +1,47 @@
+void generateAptDb() {
+	
+	ifstream readApts(GlobalVars::workingDirectory + "Custom Data\\GNS430\\navdata\\Airports.txt");
+	XPLMDebugString("ATTEMPTING TO READ\n");
+	XPLMDebugString( (GlobalVars::workingDirectory + "Custom Data/GNS430/navdata/Airports.txt\n").c_str());
+	if (readApts.fail()) {
+		char messageFail[1024];
+		strcpy(messageFail, "GNS430 DATA NOT FOUND, RETURNING FROM FUNCTION\n");
+		XPLMDebugString(messageFail);
+		return;
+	}
+	string buffer1;
+
+	try {
+
+		while (getline(readApts, buffer1)) {
+			
+
+
+			if (buffer1.length()>0  && buffer1.at(0) == 'A') {
+				
+
+				double latitude;
+				double longitude;
+				string name;
+				vector<string> parsedData = split(buffer1, ",");
+				
+				XPLMDebugString(to_string(parsedData.size()).c_str());
+				latitude = stod(parsedData[3]);
+				longitude = stod(parsedData[4]);
+				name = parsedData[1];
+				displayObject newObject(latitude, longitude, name, 1);
+				apts[name] = newObject;
+				
+			}
+		}
+	}
+	catch (exception e) {
+		XPLMDebugString(e.what());
+	}
+	XPLMDebugString("[787 FUNCTIONS]: DONE PARSING AIRPORTS\n");
+	string s = "LAST AIRPORT" + apts.at("CYYZ").name + "\n";
+	 
+	
+	XPLMDebugString(s.c_str());
+//	smallND1=new ndTest1(700, 1450, 1, apts,1);
+}

@@ -1,0 +1,166 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Bus.cpp
+e:\coding projects\source\repos\project2\project2\bus.h(4): fatal error C1083: Cannot open include file: 'Relay.h': No such file or directory
+  BusManager.cpp
+e:\coding projects\source\repos\project2\project2\busmanager.h(3): fatal error C1083: Cannot open include file: 'Bus.h': No such file or directory
+  CallbackInterface.cpp
+e:\coding projects\source\repos\project2\project2\callbackinterface.h(2): fatal error C1083: Cannot open include file: 'XPLMProcessing.h': No such file or directory
+  Connection.cpp
+  DrefDouble.cpp
+  DrefDoubleArray.cpp
+e:\coding projects\source\repos\project2\project2\datareftypes\drefdoublearray.h(2): fatal error C1083: Cannot open include file: 'globalSingletons/dref.h': No such file or directory
+  DrefInt.cpp
+e:\coding projects\source\repos\project2\project2\datareftypes\drefint.cpp(1): fatal error C1083: Cannot open include file: 'DatarefTypes/DrefInt.h': No such file or directory
+  DrefIntArray.cpp
+e:\coding projects\source\repos\project2\project2\datareftypes\drefintarray.h(2): fatal error C1083: Cannot open include file: 'globalSingletons/dref.h': No such file or directory
+  DrefString.cpp
+  dref.cpp
+e:\coding projects\source\repos\project2\project2\globalsingletons\dref.h(3): fatal error C1083: Cannot open include file: 'utility/Logger.h': No such file or directory
+  drefStore.cpp
+e:\coding projects\source\repos\project2\project2\globalsingletons\drefstore.h(5): fatal error C1083: Cannot open include file: 'utility/Logger.h': No such file or directory
+  GlobalStore.cpp
+e:\coding projects\source\repos\project2\project2\globalsingletons\globalstore.h(17): warning C4091: 'static ': ignored on left of 'GlobalStore::drefTypes' when no variable is declared
+  graphicsWrapper.cpp
+e:\coding projects\source\repos\project2\project2\globalsingletons\graphicswrapper.cpp(6): fatal error C1083: Cannot open include file: 'XPLMDataAccess.h': No such file or directory
+  PluginRunner.cpp
+e:\coding projects\source\repos\project2\project2\globalsingletons\pluginrunner.cpp(2): fatal error C1083: Cannot open include file: 'utility/Logger.h': No such file or directory
+  RainEffects.cpp
+e:\coding projects\source\repos\project2\project2\globalsingletons\raineffects.h(2): fatal error C1083: Cannot open include file: 'XPLMGraphics.h': No such file or directory
+  GraphicsModule.cpp
+e:\coding projects\source\repos\project2\project2\modulehandler.h(5): fatal error C1083: Cannot open include file: 'Module.h': No such file or directory
+  RenderingProgram.cpp
+e:\coding projects\source\repos\project2\project2\graphics\renderingprogram.h(3): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+  Shader.cpp
+e:\coding projects\source\repos\project2\project2\graphics\shader.h(2): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+  Texture.cpp
+e:\coding projects\source\repos\project2\project2\graphics\texture.h(2): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Load.cpp
+e:\coding projects\source\repos\project2\project2\load.h(3): fatal error C1083: Cannot open include file: 'electrical/LoadType.h': No such file or directory
+  Generating Code...
+  Compiling...
+  LoadAC.cpp
+e:\coding projects\source\repos\project2\project2\load.h(3): fatal error C1083: Cannot open include file: 'electrical/LoadType.h': No such file or directory
+  LoadDC.cpp
+e:\coding projects\source\repos\project2\project2\load.h(3): fatal error C1083: Cannot open include file: 'electrical/LoadType.h': No such file or directory
+  Module.cpp
+  ModuleHandler.cpp
+e:\coding projects\source\repos\project2\project2\modulehandler.h(5): fatal error C1083: Cannot open include file: 'Module.h': No such file or directory
+  displayObject.cpp
+  PowerSource.cpp
+e:\coding projects\source\repos\project2\project2\powersource.cpp(2): fatal error C1083: Cannot open include file: 'BusManager.h': No such file or directory
+  Relay.cpp
+e:\coding projects\source\repos\project2\project2\relay.h(2): fatal error C1083: Cannot open include file: 'electrical/LoadType.h': No such file or directory
+  Source.cpp
+e:\coding projects\source\repos\project2\project2\source.cpp(19): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+  startupChecker.cpp
+e:\coding projects\source\repos\project2\project2\startupchecker\startupchecker.cpp(1): warning C4081: expected 'identifier'; found '('
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(192): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(962): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(970): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\wtypesbase.h(436): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\wtypesbase.h(461): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\wtypesbase.h(478): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\wtypes.h(77): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\wtypes.h(86): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\wtypes.h(92): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\wtypes.h(98): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\wtypes.h(104): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\wtypes.h(110): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\wtypes.h(485): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidlbase.h(2175): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidlbase.h(2189): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidlbase.h(7874): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidlbase.h(7890): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(9738): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(10267): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(10299): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(10778): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(10793): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(11236): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(12969): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(12984): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(14650): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(14666): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(14813): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(14852): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(14869): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(14886): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(15131): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\objidl.h(15150): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\oaidl.h(563): error C2872: 'byte': ambiguous symbol
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\rpcndr.h(191): note: could be 'unsigned char byte'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\cstddef(23): note: or       'std::byte'
+e:\coding projects\source\repos\project2\project2\startupchecker\startupchecker.cpp(4): fatal error C1083: Cannot open include file: 'utility/Logger.h': No such file or directory
+  AsyncProducer.cpp
+e:\coding projects\source\repos\project2\project2\udplisteners\asyncproducer.cpp(1): fatal error C1083: Cannot open include file: 'udpListeners/AsyncProducer.h': No such file or directory
+  SynchronousServer.cpp
+e:\coding projects\source\repos\project2\project2\udplisteners\synchronousserver.h(2): fatal error C1083: Cannot open include file: 'utility/Logger.h': No such file or directory
+  Logger.cpp
+e:\coding projects\source\repos\project2\project2\utility\logger.h(3): fatal error C1083: Cannot open include file: 'XPLMUtilities.h': No such file or directory
+  Generating Code...

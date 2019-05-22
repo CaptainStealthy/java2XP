@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ndElements\displayObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\RenderingProgram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="globalSingletons\dref.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="globalSingletons\drefStore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="globalSingletons\GlobalStore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="globalSingletons\graphicsWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="globalSingletons\PluginRunner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="globalSingletons\RainEffects.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="startupChecker\startupChecker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DatarefTypes\DrefDouble.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DatarefTypes\DrefInt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DatarefTypes\DrefString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CallbackInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsModule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Relay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Load.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadAC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadDC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BusManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerSource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DatarefTypes\DrefDoubleArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DatarefTypes\DrefIntArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JNIWrapper\JNIWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JNIWrapper\javaXPWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JNIWrapper\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JNIWrapper\imgui_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JNIWrapper\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JNIWrapper\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JNIWrapper\FloatingWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JNIWrapper\ImGUIIntegration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="utility\Logger.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ndElements\displayObject.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\RenderingProgram.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\Shader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\Texture.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globalSingletons\dref.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globalSingletons\drefStore.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globalSingletons\GlobalStore.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globalSingletons\graphicsWrapper.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globalSingletons\PluginRunner.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globalSingletons\RainEffects.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="startupChecker\startupChecker.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DrefCommand.h" />
+    <ClInclude Include="DrefGetCommand.h" />
+    <ClInclude Include="DatarefTypes\DrefDouble.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DatarefTypes\DrefInt.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DatarefTypes\DrefString.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CallbackInterface.h" />
+    <ClInclude Include="GraphicsModule.h" />
+    <ClInclude Include="Module.h" />
+    <ClInclude Include="ModuleHandler.h" />
+    <ClInclude Include="Relay.h" />
+    <ClInclude Include="electrical\LoadType.h" />
+    <ClInclude Include="Load.h" />
+    <ClInclude Include="LoadAC.h" />
+    <ClInclude Include="LoadDC.h" />
+    <ClInclude Include="Bus.h" />
+    <ClInclude Include="BusManager.h" />
+    <ClInclude Include="PowerSource.h" />
+    <ClInclude Include="Connection.h" />
+    <ClInclude Include="electrical\ConnectionTypes.h" />
+    <ClInclude Include="DatarefTypes\DrefDoubleArray.h" />
+    <ClInclude Include="DatarefTypes\DrefIntArray.h" />
+    <ClInclude Include="JNIWrapper\JNIWrapper.h" />
+    <ClInclude Include="JNIWrapper\javaXPWindow.h" />
+    <ClInclude Include="JNIWrapper\imgui.h" />
+    <ClInclude Include="JNIWrapper\imstb_rectpack.h" />
+    <ClInclude Include="JNIWrapper\imstb_textedit.h" />
+    <ClInclude Include="JNIWrapper\imstb_truetype.h" />
+    <ClInclude Include="JNIWrapper\imconfig.h" />
+    <ClInclude Include="JNIWrapper\imgui_internal.h" />
+    <ClInclude Include="JNIWrapper\FloatingWindow.h" />
+    <ClInclude Include="JNIWrapper\ImGUIIntegration.h" />
+    <ClInclude Include="JNIWrapper\JNIUtils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text.txt" />
+  </ItemGroup>
+</Project>

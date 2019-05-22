@@ -1,0 +1,4 @@
+#pragma once
+
+
+enum connectionType{BUS_BUS,AC_ACRELAY,DC_DCRELAY,BUS_POWERSOURCE,BATTERY_CHARGER};

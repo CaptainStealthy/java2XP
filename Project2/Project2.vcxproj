@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{E6295C8F-28B6-42AB-8800-B9F4B45ED4A2}</ProjectGuid>
+    <RootNamespace>Project2</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetExt>.xpl</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetExt>.xpl</TargetExt>
+    <TargetName>win</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <OutDir>E:\Magknight Github\787\plugins\FMC\64</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetExt>.xpl</TargetExt>
+    <OutDir>E:\Magknight Github\787\plugins\FMC\64</OutDir>
+    <TargetName>win</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\CHeaders\Widgets;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\CHeaders\Wrappers;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\CHeaders\XPLM;C:\Users\omer\Desktop\udt4\app;C:\Users\omer\Desktop\udt4\src;C:\Users\omer\source\repos\Project2\Project2\Packet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);XPLM301=1;XPLM300=1;XPLM201=1;XPLM200=1;IBM=1</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>WS2_32.Lib;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\Libraries\Win\XPLM.lib;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\Libraries\Win\XPLM_64.lib;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\Libraries\Win\XPWidgets.lib;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\Libraries\Win\XPWidgets_64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\omer\Desktop\HTML RENDER\ultralight-1.9.1\include;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\CHeaders\Widgets;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\CHeaders\Wrappers;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\CHeaders\XPLM;$(AWE_DIR)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDLL;_USRDLL;_WINDOWS;IBM=1;XPLM200=1;XPLM210=1;XPLM300=1;_WINSOCK_DEPRECATED_NO_WARNINGS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Opengl32.lib;odbc32.lib;odbccp32.lib;XPLM_64.lib;XPWidgets_64.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\Libraries\Win;C:\Users\omer\Desktop\HTML RENDER\ultralight-1.9.1\lib\win\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\Coding Libraries\imgui2xp;C:\Program Files\Java\jdk1.8.0_191\include\win32;C:\Program Files\Java\jdk1.8.0_191\include;E:\Coding Libraries\boost;E:\Coding Libraries\SDL2-2.0.9\include;E:\Coding Libraries\GLEW\include;E:\Coding Libraries\libacfutils-redist\include;E:\Coding Libraries\librain\include;E:\Coding Projects\source\repos\Project2\Project2;E:\X-Plane 11 SDK WIP\SDK\CHeaders\XPLM;E:\X-Plane 11 SDK WIP\SDK\CHeaders\Wrappers;E:\X-Plane 11 SDK WIP\SDK\Libraries\Win;E:\X-Plane 11 SDK WIP\SDK\CHeaders\Widgets;E:\Coding Libraries\C++\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINSOCK2API_;_WINDLL;_USRDLL;_WINDOWS;XPLM=1;IBM=1;XPLM200=1;XPLM210=1;XPLM300=1;XPLM301=1;_WINSOCK_DEPRECATED_NO_WARNINGS=1;_CRT_SECURE_NO_WARNINGS;_cplusplus;_DLLMODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/MT %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ShowIncludes>false</ShowIncludes>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>jvm.lib;glew32.lib;SDL2_image.lib;SDL2.lib;SDL2main.lib;odbc32.lib;odbccp32.lib;XPLM_64.lib;XPWidgets_64.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\Java\jdk1.8.0_191\lib;E:\Coding Libraries\GLEW\lib\Release\x64;E:\Coding Libraries\SDL2-2.0.9\lib\x64;E:\Coding Libraries\libacfutils-redist\win64\lib;C:\X-Plane 11 SDK WIP\SDK\Libraries\Win;E:\Coding Libraries\librain\win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference />
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Bus.cpp" />
+    <ClCompile Include="BusManager.cpp" />
+    <ClCompile Include="CallbackInterface.cpp" />
+    <ClCompile Include="Connection.cpp" />
+    <ClCompile Include="DatarefTypes\DrefDouble.cpp" />
+    <ClCompile Include="DatarefTypes\DrefDoubleArray.cpp" />
+    <ClCompile Include="DatarefTypes\DrefInt.cpp" />
+    <ClCompile Include="DatarefTypes\DrefIntArray.cpp" />
+    <ClCompile Include="DatarefTypes\DrefString.cpp" />
+    <ClCompile Include="globalSingletons\dref.cpp" />
+    <ClCompile Include="globalSingletons\drefStore.cpp" />
+    <ClCompile Include="globalSingletons\GlobalStore.cpp" />
+    <ClCompile Include="globalSingletons\graphicsWrapper.cpp" />
+    <ClCompile Include="globalSingletons\PluginRunner.cpp" />
+    <ClCompile Include="globalSingletons\RainEffects.cpp" />
+    <ClCompile Include="GraphicsModule.cpp" />
+    <ClCompile Include="graphics\RenderingProgram.cpp" />
+    <ClCompile Include="graphics\Shader.cpp" />
+    <ClCompile Include="graphics\Texture.cpp" />
+    <ClCompile Include="JNIWrapper\FloatingWindow.cpp" />
+    <ClCompile Include="JNIWrapper\imgui.cpp" />
+    <ClCompile Include="JNIWrapper\ImGUIIntegration.cpp" />
+    <ClCompile Include="JNIWrapper\imgui_demo.cpp" />
+    <ClCompile Include="JNIWrapper\imgui_draw.cpp" />
+    <ClCompile Include="JNIWrapper\imgui_widgets.cpp" />
+    <ClCompile Include="JNIWrapper\javaXPWindow.cpp" />
+    <ClCompile Include="JNIWrapper\JNIWrapper.cpp" />
+    <ClCompile Include="Load.cpp" />
+    <ClCompile Include="LoadAC.cpp" />
+    <ClCompile Include="LoadDC.cpp" />
+    <ClCompile Include="Module.cpp" />
+    <ClCompile Include="ModuleHandler.cpp" />
+    <ClCompile Include="ndElements\displayObject.cpp" />
+    <ClCompile Include="PowerSource.cpp" />
+    <ClCompile Include="Relay.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="startupChecker\startupChecker.cpp" />
+    <ClCompile Include="utility\Logger.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bus.h" />
+    <ClInclude Include="BusManager.h" />
+    <ClInclude Include="CallbackInterface.h" />
+    <ClInclude Include="Connection.h" />
+    <ClInclude Include="DatarefTypes\DrefDouble.h" />
+    <ClInclude Include="DatarefTypes\DrefDoubleArray.h" />
+    <ClInclude Include="DatarefTypes\DrefInt.h" />
+    <ClInclude Include="DatarefTypes\DrefIntArray.h" />
+    <ClInclude Include="DatarefTypes\DrefString.h" />
+    <ClInclude Include="DrefCommand.h" />
+    <ClInclude Include="DrefGetCommand.h" />
+    <ClInclude Include="electrical\ConnectionTypes.h" />
+    <ClInclude Include="electrical\LoadType.h" />
+    <ClInclude Include="globalSingletons\dref.h" />
+    <ClInclude Include="globalSingletons\drefStore.h" />
+    <ClInclude Include="globalSingletons\GlobalStore.h" />
+    <ClInclude Include="globalSingletons\graphicsWrapper.h" />
+    <ClInclude Include="globalSingletons\PluginRunner.h" />
+    <ClInclude Include="globalSingletons\RainEffects.h" />
+    <ClInclude Include="GraphicsModule.h" />
+    <ClInclude Include="graphics\RenderingProgram.h" />
+    <ClInclude Include="graphics\Shader.h" />
+    <ClInclude Include="graphics\Texture.h" />
+    <ClInclude Include="JNIWrapper\FloatingWindow.h" />
+    <ClInclude Include="JNIWrapper\imconfig.h" />
+    <ClInclude Include="JNIWrapper\imgui.h" />
+    <ClInclude Include="JNIWrapper\ImGUIIntegration.h" />
+    <ClInclude Include="JNIWrapper\imgui_internal.h" />
+    <ClInclude Include="JNIWrapper\imstb_rectpack.h" />
+    <ClInclude Include="JNIWrapper\imstb_textedit.h" />
+    <ClInclude Include="JNIWrapper\imstb_truetype.h" />
+    <ClInclude Include="JNIWrapper\javaXPWindow.h" />
+    <ClInclude Include="JNIWrapper\JNIUtils.h" />
+    <ClInclude Include="JNIWrapper\JNIWrapper.h" />
+    <ClInclude Include="Load.h" />
+    <ClInclude Include="LoadAC.h" />
+    <ClInclude Include="LoadDC.h" />
+    <ClInclude Include="Module.h" />
+    <ClInclude Include="ModuleHandler.h" />
+    <ClInclude Include="ndElements\displayObject.h" />
+    <ClInclude Include="PowerSource.h" />
+    <ClInclude Include="Relay.h" />
+    <ClInclude Include="startupChecker\startupChecker.h" />
+    <ClInclude Include="utility\Logger.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
