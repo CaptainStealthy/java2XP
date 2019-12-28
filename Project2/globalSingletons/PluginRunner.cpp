@@ -6,14 +6,12 @@
 #include <globalSingletons/drefStore.h>
 #include <globalSingletons/GlobalStore.h>
 #include<globalSingletons/graphicsWrapper.h>
-#include<globalSingletons/RainEffects.h>
+
 #include <CallbackInterface.h>
 #include "JNIWrapper/JNIWrapper.h"
+#include "graphics/mainRenderer/CockpitRenderer.h"
 using namespace std;
 
-
-//THIS CLASS IS SUPPOSED TO RUN AND MANAGE ALL OF THE PLUGIN'S FUNCTIONS
-//WE NEED A SINGLETON INSTANCE OF EACH SINGLETON CLASS
 
 shared_ptr<PluginRunner> PluginRunner::myInstance = nullptr;
 
@@ -30,8 +28,10 @@ void PluginRunner::cleanup(void)
 	
 	jniWrapper = nullptr;
 	drefStore->stop();
-	myInstance = nullptr;
 	CallbackInterface::getInstance()->stop();
+	
+	CockpitRenderer::getRendererInstance()->destroyCockpitRenderer();
+	myInstance = nullptr;
 }
 
 
@@ -44,9 +44,9 @@ void PluginRunner::draw3d()
 {
 }
 
-PluginRunner::PluginRunner()
+void PluginRunner::initializePlugin()
 {
-	
+
 	CallbackInterface::makeNewInterface();
 
 
@@ -63,6 +63,17 @@ PluginRunner::PluginRunner()
 
 	logger->setLogLevel(Logger::log_message);
 	logger->logString("PluginRunner Started");
+
+	jniWrapper->setInitialized(true);
+
+
+	CockpitRenderer::createCockpitRenderer(4096,4096);
+
+}
+
+PluginRunner::PluginRunner()
+{
+
 }
 
 

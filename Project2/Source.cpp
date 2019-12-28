@@ -229,20 +229,21 @@ PLUGIN_API int XPluginEnable(void) {
 
 	pluginRunner = make_shared<PluginRunner>();
 	pluginRunner->setCurrentPlugin(pluginRunner);
+	pluginRunner->initializePlugin();
 
 	gStore->setProperty("Exiting", "false");
 	//logger.setLogLevel(Logger::log_error);
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
-		//logger.logString("SDL 2 Failed to initialize\n");
+		XPLMDebugString("[JAVA2XP] SDL FAILED TO INTITIALIZE\n");
 	}
 
 	if (IMG_Init(IMG_INIT_PNG) < 0) {
-		//logger.logString("IMG INIT FAILED TO INIT, WON'T BE ABLE TO LOAD TEXTURES\n");
+		XPLMDebugString("[JAVA2XP] SDL_IMG FAILED TO INTITIALIZE\n");
 	}
 
 	if (glewInit() != GLEW_OK) {
 
-		//logger.logString("GLEW FAILED TO INIT\n");
+		XPLMDebugString("[JAVA2XP] GLEW FAILED TO INTITIALIZE\n");
 	}
 
 	

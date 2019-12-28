@@ -1,14 +1,17 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
 cl : Command line warning D9025: overriding '/MD' with '/MT'
-  JNIWrapper.cpp
-e:\coding projects\source\repos\project2\project2\utility\logger.h(16): warning C4091: 'static ': ignored on left of 'Logger::log_level' when no variable is declared
+  CockpitRenderer.cpp
 e:\coding projects\source\repos\project2\project2\globalsingletons\drefstore.h(26): warning C4091: 'static ': ignored on left of 'DrefStore::drefTypes' when no variable is declared
-e:\coding projects\source\repos\project2\project2\globalsingletons\globalstore.h(17): warning C4091: 'static ': ignored on left of 'GlobalStore::drefTypes' when no variable is declared
-e:\coding projects\source\repos\project2\project2\jniwrapper\jniwrapper.cpp(299): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+e:\coding projects\source\repos\project2\project2\utility\logger.h(16): warning C4091: 'static ': ignored on left of 'Logger::log_level' when no variable is declared
+e:\coding projects\source\repos\project2\project2\graphics\mainrenderer\cockpitrenderer.cpp(168): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+e:\coding projects\source\repos\project2\project2\graphics\mainrenderer\cockpitrenderer.cpp(169): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+e:\coding projects\source\repos\project2\project2\graphics\mainrenderer\cockpitrenderer.cpp(170): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+e:\coding projects\source\repos\project2\project2\graphics\mainrenderer\cockpitrenderer.cpp(171): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+e:\coding projects\source\repos\project2\project2\graphics\mainrenderer\cockpitrenderer.cpp(185): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
      Creating library E:\Magknight Github\787\plugins\FMC\64\win.lib and object E:\Magknight Github\787\plugins\FMC\64\win.exp
   Generating code
-  11 of 3135 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+  149 of 3444 functions ( 4.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    15 functions had inline decision re-evaluated but remain unchanged
+    96 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Project2.vcxproj -> E:\Magknight Github\787\plugins\FMC\64\win.xpl

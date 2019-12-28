@@ -13,37 +13,31 @@ public:
 	};
 
 	std::string getAsString() {
+		char valueRetrieved[1024];
+		int size = XPLMGetDatab(drefAccess, NULL, 0, NULL);
+
+		XPLMGetDatab(drefAccess, &valueRetrieved, 0, size);
+		valueRetrieved[size] = 0;
+
+		currentValue = valueRetrieved;
 		return currentValue;
 	}
 
 	void setString(std::string value) {
-		valueToWrite = value;
-		writeNextLoop = true;
-		currentValue = valueToWrite;
+
+		const char* valueC = value.c_str();
+
+		XPLMSetDatab(drefAccess, (void *)valueC, 0, strlen(valueC));
 	}
 
 	void update() {
-		if (writeNextLoop) {
-			XPLMSetDatab(drefAccess,(void *)valueToWrite.c_str(),0,strlen(valueToWrite.c_str()));
-			
-			writeNextLoop = false;
-		}
-		else {
-			char valueRetrieved[1024];
-			int size = XPLMGetDatab(drefAccess,NULL, 0, NULL);
-
-			XPLMGetDatab(drefAccess, &valueRetrieved, 0, size);
-			valueRetrieved[size] = 0;
-
-			currentValue = valueRetrieved;
-		}
+	
 	}
 
 
 private:
 	std::string currentValue ="";
-	std::string valueToWrite = "";
-	bool writeNextLoop = false;
+	
 };
 
 

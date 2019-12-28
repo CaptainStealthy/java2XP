@@ -2,6 +2,7 @@
 #include <utility/Logger.h>
 #include <globalSingletons/drefStore.h>
 #include "JNIWrapper/JNIWrapper.h"
+#include "RainEffects.h"
 
 class JNIWrapper;
 
@@ -29,6 +30,9 @@ public:
 	static std::shared_ptr<PluginRunner> getCurrentPlugin() {
 		return myInstance;
 	}
+
+	void initializePlugin();
+
 	PluginRunner();
 	~PluginRunner();
 
@@ -36,6 +40,7 @@ private:
 	std::unique_ptr<Logger> logger;
 	std::shared_ptr<DrefStore> drefStore;
 	std::shared_ptr<JNIWrapper> jniWrapper;
+	std::shared_ptr<RainEffects> rainEffects;
 	static std::shared_ptr<PluginRunner> myInstance;
 
 

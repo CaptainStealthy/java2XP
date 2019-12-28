@@ -44,9 +44,6 @@
     <ClCompile Include="globalSingletons\PluginRunner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="globalSingletons\RainEffects.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="startupChecker\startupChecker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -125,6 +122,15 @@
     <ClCompile Include="JNIWrapper\ImGUIIntegration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="graphics\mainRenderer\CockpitRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\module\CockpitModule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\textures\TextureStore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utility\Logger.h">
@@ -155,9 +161,6 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="globalSingletons\PluginRunner.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="globalSingletons\RainEffects.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="startupChecker\startupChecker.h">
@@ -201,6 +204,9 @@
     <ClInclude Include="JNIWrapper\FloatingWindow.h" />
     <ClInclude Include="JNIWrapper\ImGUIIntegration.h" />
     <ClInclude Include="JNIWrapper\JNIUtils.h" />
+    <ClInclude Include="graphics\mainRenderer\CockpitRenderer.h" />
+    <ClInclude Include="graphics\module\CockpitModule.h" />
+    <ClInclude Include="graphics\textures\TextureStore.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Text.txt" />

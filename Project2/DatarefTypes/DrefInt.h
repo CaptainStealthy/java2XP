@@ -14,31 +14,20 @@ public:
 	};
 
 	int getAsInt() {
-		return currentValue;
+		return XPLMGetDatai(drefAccess);
 	}
 
 	void setInt(int value) {
-		valueToWrite = value;
-		currentValue = valueToWrite;
-		writeNextLoop = true;
+		XPLMSetDatai(this->drefAccess, value);
 	}
 
 	void update() {
-		if (writeNextLoop) {
-			XPLMSetDatai(drefAccess, valueToWrite);
-			
-			writeNextLoop = false;
-		}
-		else {
-			currentValue = XPLMGetDatai(drefAccess);
-		}
+		
 	}
 
 	
 private:
-	int currentValue = 0;
-	int valueToWrite = 0;
-	bool writeNextLoop = false;
+	
 }; 
 
 

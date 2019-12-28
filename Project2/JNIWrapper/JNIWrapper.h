@@ -31,11 +31,22 @@ public:
 		window = nullptr;
 	}
 
+	void setInitialized(bool state) {
+
+		this->jvmInitialized = state;
+
+		CallbackInterface::getInstance()->registerCB(std::bind(&JNIWrapper::update, this));
+
+	}
+
 private:
+
+	bool javaInitialized = false;
 
 	XPLMCommandRef logWindowCommand;
 	XPLMMenuID ourMenu;
 
+	bool jvmInitialized = false;
 	bool makeWindow = false;
 	bool windowExited = true;
 
@@ -59,6 +70,10 @@ private:
 	bool startJVM();
 
 	void update();
+
+	bool findLoadedJVM(std::string jarPath);
+
+	void addSystemClassLoaderPath(std::string classPath);
 
 	void stop();
 

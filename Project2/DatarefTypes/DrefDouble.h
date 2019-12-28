@@ -14,30 +14,20 @@ public:
 	};
 
 	double getAsDouble() {
-		return currentValue;
+		return XPLMGetDataf(this->drefAccess);
 	}
 
 	void setDouble(double value) {
-		valueToWrite = value;
-		writeNextLoop = true;
-		currentValue = valueToWrite;
+		XPLMSetDataf(this->drefAccess, value);
 	}
 
 	void update() {
-		if (writeNextLoop) {
-			XPLMSetDatad(drefAccess, valueToWrite);
-			writeNextLoop = false;
-		}
-		else {
-			currentValue = XPLMGetDatad(drefAccess);
-		}
+		
 	}
 
 
 private:
-	double currentValue = 0;
-	double valueToWrite = 0;
-	bool writeNextLoop = false;
+
 };
 
 

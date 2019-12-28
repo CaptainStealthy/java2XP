@@ -11,7 +11,14 @@ public:
 
 	void renderToContext(SDL_Renderer *renderer, int x_offset,int y_offset,int width, int height);
 
-	Texture(std::string fileName,SDL_Renderer *renderer);
+	Texture(std::string fileName,SDL_Renderer *renderer,int texID);
+
+	bool texIniitSucceeded;
+
+	int textureID = 0;
+
+	void loadTexture(std::string& fileName, SDL_Renderer *renderer);
+
 	~Texture();
 };
 

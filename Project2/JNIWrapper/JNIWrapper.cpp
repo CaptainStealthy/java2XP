@@ -60,38 +60,46 @@ int  showWindow(XPLMCommandRef       inCommand, XPLMCommandPhase     inPhase, vo
 
 JNIWrapper::JNIWrapper()
 {
-	
-	instance = DrefStore::getInstance();
-	startJVM();
-	findAndLoadClass("org/main/Drefs/DrefNativeInterface");
-	findAndLoadClass("org/main/UpdateLoop/LogOutput");
-	findAndLoadClass("org/main/UpdateLoop/FlightLoopCB");
-	findAndLoadClass("org/main/InitEverything");
-	findAndLoadClass("org/main/utility/Utility");
-	findAndLoadClass("Main");
-	registerNatives();
-	findAndAddStaticMethod("initProject", "Main", "([Ljava/lang/String;)I");
-	findAndAddStaticMethod("exit", "org/main/InitEverything", "()V");
-	findAndAddStaticMethod("update", "org/main/UpdateLoop/FlightLoopCB", "()V");
-	findAndAddStaticMethod("registerAll", "org/main/Drefs/DrefNativeInterface", "()V");
 	logger = new Logger("JNIWrapper");
+	instance = DrefStore::getInstance();
+	javaInitialized  = startJVM();
+	if (javaInitialized) {
+		findAndLoadClass("org/main/Drefs/DrefNativeInterface");
+		findAndLoadClass("org/main/UpdateLoop/LogOutput");
+		findAndLoadClass("org/main/UpdateLoop/FlightLoopCB");
+		findAndLoadClass("org/main/InitEverything");
+		findAndLoadClass("org/main/utility/Utility");
+		findAndLoadClass("Main");
+		registerNatives();
+		findAndAddStaticMethod("initProject", "Main", "([Ljava/lang/String;)I");
+		findAndAddStaticMethod("exit", "org/main/InitEverything", "()V");
+		findAndAddStaticMethod("update", "org/main/UpdateLoop/FlightLoopCB", "()V");
+		findAndAddStaticMethod("registerAll", "org/main/Drefs/DrefNativeInterface", "()V");
 
-	jclass mainClass = classes.at("Main");
-	jmethodID mainMethod = methods.at("initProject");
-	env->CallIntMethod(mainClass, mainMethod, nullptr);
 
-	XPLMRegisterDrawCallback(drawWindow, xplm_Phase_Window, 0, NULL);
+		jclass mainClass = classes.at("Main");
+		jmethodID mainMethod = methods.at("initProject");
+		env->CallIntMethod(mainClass, mainMethod, nullptr);
 
-	logWindowCommand = XPLMCreateCommand("java2xp/showWindow", "Shows the log window for java2xp");
+		XPLMRegisterDrawCallback(drawWindow, xplm_Phase_Window, 0, NULL);
 
-	XPLMRegisterCommandHandler(logWindowCommand, showWindow, 0, NULL);
+		logWindowCommand = XPLMCreateCommand("java2xp/showWindow", "Shows the log window for java2xp");
 
-	ourMenu = XPLMCreateMenu("Java2XP", NULL, NULL, NULL, NULL);
-	XPLMAppendMenuItemWithCommand(ourMenu, "Show Log Output", logWindowCommand);
+		XPLMRegisterCommandHandler(logWindowCommand, showWindow, 0, NULL);
 
-	window = nullptr;
+		ourMenu = XPLMCreateMenu("Java2XP", NULL, NULL, NULL, NULL);
+		XPLMAppendMenuItemWithCommand(ourMenu, "Show Log Output", logWindowCommand);
 
-	CallbackInterface::getInstance()->registerCB(std::bind(&JNIWrapper::update, this));
+		string message = "JVM State after loading process: \nSuccessfully registered " + to_string(classes.size()) + " classes\nSuccessfully registered " + to_string(methods.size()) + " methods";
+		logger->logString(message);
+
+		window = nullptr;
+
+		CallbackInterface::getInstance()->registerCB(std::bind(&JNIWrapper::update, this));
+	}
+	else {
+		logger->logString("Unable to start JVM!\nPossibly restart the simulator to fix the issue!");
+	}
 }
 
 JNIWrapper::~JNIWrapper()
@@ -103,19 +111,19 @@ bool JNIWrapper::startJVM()
 {
 	JavaVMInitArgs argsInit;
 
-	JavaVMOption* options = new JavaVMOption[1];
+	JavaVMOption* options = new JavaVMOption[2];
 	string dllDir = GlobalStore::getInstance()->getProperty("dllDirectory");
 	string jarFile = GlobalStore::getInstance()->getProperty("projectJarFile");
 
-	jsize numberVMs;
 
-	JNI_GetCreatedJavaVMs(NULL, 0, &numberVMs);
+	string classPath = dllDir + "projectJar/" + jarFile;
 
-	string optionClassPath = "-Djava.class.path=" + dllDir + "projectJar/"+jarFile;
+	string optionClassPath = "-Djava.class.path=" + classPath;
 	options[0].optionString =(char *) optionClassPath.c_str();
+	options[1].optionString = (char *)"-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=2000";
 
 	argsInit.version = JNI_VERSION_1_8;
-	argsInit.nOptions = 1;
+	argsInit.nOptions = 2;
 	argsInit.options = options;
 	argsInit.ignoreUnrecognized = false;
 
@@ -126,8 +134,12 @@ bool JNIWrapper::startJVM()
 	delete options;
 
 	if (result != JNI_OK) {
-		cout << "Failed to iniialize JVM";
-		return false;
+		logger->logString("Failed to initialize JVM!\nTrying to attach!");
+		return findLoadedJVM(classPath);
+		
+	}
+	else {
+		logger->logString("JVM Started successfully!");
 	}
 
 
@@ -137,16 +149,124 @@ bool JNIWrapper::startJVM()
 
 void JNIWrapper::update()
 {
-	if (!drefsInitialized) {
-		jclass drefClass = classes.at("org/main/Drefs/DrefNativeInterface");
-		jmethodID registerInitialDrefs = methods.at("registerAll");
-		env->CallVoidMethod(drefClass, registerInitialDrefs,nullptr);
-		drefsInitialized = true;
-		
+	if (jvmInitialized) {
+
+		if (!drefsInitialized) {
+
+			jclass drefClass = classes.at("org/main/Drefs/DrefNativeInterface");
+
+			jmethodID registerInitialDrefs = methods.at("registerAll");
+
+			env->CallVoidMethod(drefClass, registerInitialDrefs, nullptr);
+
+			drefsInitialized = true;
+		}
+
+		jclass updateClass = classes.at("org/main/UpdateLoop/FlightLoopCB");
+
+		jmethodID updateMethod = methods.at("update");
+
+		env->CallVoidMethod(updateClass, updateMethod, nullptr);
+
 	}
-	jclass updateClass = classes.at("org/main/UpdateLoop/FlightLoopCB");
-	jmethodID updateMethod = methods.at("update");
-	env->CallVoidMethod(updateClass, updateMethod, nullptr);
+
+}
+
+bool JNIWrapper::findLoadedJVM(std::string jarPath)
+{
+
+	JavaVM** createdVMS = new JavaVM*[1];
+
+
+
+	jsize numVMS;
+
+
+
+	env = nullptr;
+
+
+
+	JNI_GetCreatedJavaVMs(createdVMS, 1, &numVMS);
+
+
+
+	javaVM = createdVMS[0];
+
+
+
+	jint result = javaVM->GetEnv((void**)&env, JNI_VERSION_1_8);
+
+
+
+	if (result == JNI_EDETACHED) {
+
+		javaVM->AttachCurrentThread((void**)&env, NULL);
+
+		result = javaVM->GetEnv((void**)&env, JNI_VERSION_1_8);
+
+	}
+
+	addSystemClassLoaderPath(jarPath);
+
+	return (result == JNI_OK);
+
+}
+
+void JNIWrapper::addSystemClassLoaderPath(std::string classPath)
+{
+
+	// construct URL from file path
+
+
+
+	jstring fpStr = env->NewStringUTF(classPath.c_str());
+
+
+
+	jclass cls = env->FindClass("java/io/File");
+
+	jmethodID mtdId = env->GetMethodID(cls, "<init>", "(Ljava/lang/String;)V");
+
+	jobject file = env->NewObject(cls, mtdId, fpStr);
+
+
+
+	mtdId = env->GetMethodID(cls, "toURI", "()Ljava/net/URI;");
+
+	jobject uri = env->CallObjectMethod(file, mtdId);
+
+
+
+	cls = env->FindClass("java/net/URI");
+
+	mtdId = env->GetMethodID(cls, "toURL", "()Ljava/net/URL;");
+
+	jobject url = env->CallObjectMethod(uri, mtdId);
+
+
+
+	// get system classloader
+
+	jclass classloaderClass = env->FindClass("java/lang/ClassLoader");
+
+	mtdId = env->GetStaticMethodID(classloaderClass, "getSystemClassLoader", "()Ljava/lang/ClassLoader;");
+
+	jobject sysClsLoader = env->CallStaticObjectMethod(classloaderClass, mtdId);
+
+
+
+	// get addURL method 
+
+	jclass urlClassloaderClass = env->FindClass("java/net/URLClassLoader");
+
+	mtdId = env->GetMethodID(urlClassloaderClass, "addURL", "(Ljava/net/URL;)V");
+
+
+
+	// add url
+
+	env->CallVoidMethod(sysClsLoader, mtdId, url);
 
 }
 
@@ -155,13 +275,14 @@ void JNIWrapper::stop()
 	jclass initClass = classes.at("org/main/InitEverything");
 	jmethodID exitMethod = methods.at("exit");
 	//env->CallVoidMethod(initClass, exitMethod);
-	javaVM->DestroyJavaVM();
+	javaVM->DetachCurrentThread();
 	javaVM = nullptr;
 	env = nullptr;
 	/*if (logger) {
 		logger->setLogLevel(Logger::log_debug);
 		logger->logString("JNI Shutting down!");
 	}*/
+	XPLMDestroyMenu(ourMenu);
 	delete logger;
 }
 
@@ -169,6 +290,7 @@ void JNIWrapper::stop()
 
 bool JNIWrapper::registerNatives()
 {
+	logger->logString("Registering Natives!");
 	JNINativeMethod methods[]{
 		{(char *)"registerDref",(char *)"(Ljava/lang/String;I)V",(void *)registerDref},
 		{(char*)"getDrefInt",(char *)"(Ljava/lang/String;)I",(void *)getIntRef},
@@ -197,6 +319,7 @@ bool JNIWrapper::registerNatives()
 	jint result = env->RegisterNatives(drefNativeInterface, methods, 9);
 
 	if (result < 0) {
+		logger->logString("Failed to register natives for Dataref Interface");
 		return false;
 	}
 
@@ -205,12 +328,18 @@ bool JNIWrapper::registerNatives()
 	result = env->RegisterNatives(loggerOutput, loggers, 1);
 
 	if (result < 0) {
+		logger->logString("Failed to register natives for FLC");
 		return false;
 	}
 
 	jclass utilClass = classes.at("org/main/utility/Utility");
 
 	result = env->RegisterNatives(utilClass, utils, 3);
+
+	if (result < 0) {
+		logger->logString("Failed to register natives for Utility class!");
+		return false;
+	}
 
 	return true;
 }
@@ -222,6 +351,8 @@ void registerDref(JNIEnv *e, jobject o,jstring name, jint type)
 
 	string drefName = e->GetStringUTFChars(name, nullptr);
 	int drefType = type;
+
+	
 
 	string drefTypeName;
 
@@ -247,6 +378,10 @@ void registerDref(JNIEnv *e, jobject o,jstring name, jint type)
 			break;
 	}
 
+	if (!getCurrentJNI() || !getCurrentJNI()->instance) {
+		return;
+	}
+
 	getCurrentJNI()->instance->add(drefTypeName, drefName, drefName);
 }
 
@@ -257,8 +392,8 @@ void JNIWrapper::findAndAddMethod(string methodName, string className, string si
 		methodClass = classes.at(className);
 	}
 	catch (std::out_of_range ex) {
-		//logger->setLogLevel(Logger::log_error);
-		//logger.logString("Class for method not found!");
+		logger->setLogLevel(Logger::log_error);
+		logger->logString("Class "+className+" for method "+methodName+" not found!");
 		return;
 	}
 	jmethodID methodID = env->GetMethodID(methodClass, methodName.c_str(), signature.c_str());
@@ -272,8 +407,8 @@ void JNIWrapper::findAndAddStaticMethod(string methodName, string className, str
 		methodClass = classes.at(className);
 	}
 	catch (std::out_of_range ex) {
-		//logger.setLogLevel(Logger::log_error);
-		//logger.logString("Class for static method not found!");
+		logger->setLogLevel(Logger::log_error);
+		logger->logString("Class " + className + " for static method " + methodName + " not found!");
 		return;
 	}
 	jmethodID methodID = env->GetStaticMethodID(methodClass, methodName.c_str(), signature.c_str());
@@ -285,8 +420,8 @@ void JNIWrapper::findAndLoadClass(string className)
 	jclass javaClass = env->FindClass(className.c_str());
 
 	if (!javaClass) {
-	//	logger.setLogLevel(Logger::log_error);
-	//	logger.logString("Class : " + className + " was not found by the JVM!");
+		logger->setLogLevel(Logger::log_error);
+		logger->logString("Class : " + className + " was not found by the JVM!");
 		return;
 	}
 
@@ -397,9 +532,10 @@ void  setIntArrayRef(JNIEnv * e, jobject o, jstring name, jobjectArray values)
 void appendChar(JNIEnv * e, jobject o, jstring character)
 {
 	string value = e->GetStringUTFChars(character, nullptr);
-	if (getCurrentJNI()->window) {
+	if (getCurrentJNI() && getCurrentJNI()->window) {
 		getCurrentJNI()->window->appendCharacterToWindow(value);
 	}
+	XPLMDebugString(value.c_str());
 }
 
 

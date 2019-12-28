@@ -4,9 +4,6 @@
 class RainEffects
 {
 public:
-	static RainEffects *rainEffects;
-	
-	static RainEffects* getInstance();
 	
 
 	void initLibrain();
@@ -14,12 +11,14 @@ public:
 	void cleanup();
 
 	void registerCallBack();
-
+	~RainEffects();
+	RainEffects();
 	
 private:
 	
-	~RainEffects();
-	RainEffects();
+	void initGlassVariables();
+
+	
 	
 };
 
