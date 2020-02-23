@@ -1,12 +1,13 @@
 #pragma once
 
 #include <SDL.h>
+#include "../../modules/Module.h"
 
-class CockpitModule
+class CockpitModule : public Module
 
 {
 public:
-	CockpitModule(int x,int y,int width,int height);
+	CockpitModule(std::string moduleName,int moduleID,int x,int y,int width,int height);
 	~CockpitModule();
 
 	int getX() {

@@ -4,7 +4,7 @@
 
 
 
-CockpitModule::CockpitModule(int x, int y, int width, int height)
+CockpitModule::CockpitModule(std::string moduleName, int moduleID, int x, int y, int width, int height) : Module(moduleName, moduleID)
 {
 	this->width = width;
 	this->height = height;

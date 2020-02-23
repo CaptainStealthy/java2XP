@@ -3,7 +3,7 @@
 #include <utility/Logger.h>
 #include <string>
 #include <map>
-#include "../Texture.h"
+#include "Texture.h"
 
 class TextureStore
 {

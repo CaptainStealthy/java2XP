@@ -3,9 +3,8 @@
 #include <string>
 #include <XPLMProcessing.h>
 #include <XPLMDisplay.h>
-#include <globalSingletons/drefStore.h>
+#include <Datarefs/drefStore.h>
 #include <globalSingletons/GlobalStore.h>
-#include<globalSingletons/graphicsWrapper.h>
 
 #include <CallbackInterface.h>
 #include "JNIWrapper/JNIWrapper.h"
@@ -27,28 +26,19 @@ void PluginRunner::cleanup(void)
 {
 	
 	jniWrapper = nullptr;
-	drefStore->stop();
 	CallbackInterface::getInstance()->stop();
 	
-	CockpitRenderer::getRendererInstance()->destroyCockpitRenderer();
+	//CockpitRenderer::getRendererInstance()->destroyCockpitRenderer();
 	myInstance = nullptr;
 }
 
-
-
-void PluginRunner::draw2d()
-{
-}
-
-void PluginRunner::draw3d()
-{
-}
 
 void PluginRunner::initializePlugin()
 {
 
 	CallbackInterface::makeNewInterface();
 
+	moduleHandler = std::make_shared<ModuleHandler>();
 
 	logger = make_unique<Logger>("Plugin Runner");
 	logger->setLogLevel(Logger::log_message);
@@ -57,17 +47,25 @@ void PluginRunner::initializePlugin()
 	logger->logString(message);
 
 	logger->logString("PluginRunner initializing everything");
-	drefStore = DrefStore::createNewStore();
+	drefStore = std::make_shared<DrefStore>();
 	CallbackInterface::getInstance()->registerCB(std::bind(&PluginRunner::update, this));
-	jniWrapper = make_shared<JNIWrapper>();
+	
 
 	logger->setLogLevel(Logger::log_message);
 	logger->logString("PluginRunner Started");
 
-	jniWrapper->setInitialized(true);
+	commandInterface = make_shared<CommandInterface>();
 
+	jniWrapper = make_shared<JNIWrapper>();
 
-	CockpitRenderer::createCockpitRenderer(4096,4096);
+	
+	
+
+	
+
+	graphicsBackendEnabled = (GlobalStore::getInstance()->getProperty("enableCockpitDrawing") == "true") ? true : false;
+
+	//CockpitRenderer::createCockpitRenderer(4096,4096);
 
 }
 
@@ -80,5 +78,4 @@ PluginRunner::PluginRunner()
 
 PluginRunner::~PluginRunner()
 {
-	cout << "It works!" << endl;
 }

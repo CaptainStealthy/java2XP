@@ -3,7 +3,7 @@
 #include <XPLMUtilities.h>
 #include <ctime>
 #include <mutex>
-#include <globalSingletons/drefStore.h>
+#include <Datarefs/drefStore.h>
 
 class DrefStore;
 

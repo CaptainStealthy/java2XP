@@ -2,12 +2,12 @@
 #include<XPLMProcessing.h>
 #include <vector>
 #include <CallbackInterface.h>
-
+#include <globalSingletons/PluginRunner.h>
 
 Logger::Logger(string className)
 {
 	this->className = className;
-	store = DrefStore::getInstance();
+	store = PluginRunner::getGlobalPlugin()->getDrefStore();
 	updateID = CallbackInterface::getInstance()->registerCB(std::bind(&Logger::logMessages, this));
 	
 }

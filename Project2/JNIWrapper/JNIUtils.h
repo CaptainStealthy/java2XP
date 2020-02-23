@@ -2,31 +2,28 @@
 #include <XPLMUtilities.h>
 #include <string>
 #include "globalSingletons/GlobalStore.h"
+#include "jni.h"
+#include <memory>
+#include "../globalSingletons/PluginRunner.h"
 
 using namespace std;
 
+class JNIWrapper;
+
 namespace jniutils {
 
-	string getXplanePath() {
-		char buf[1024];
-		XPLMGetSystemPath(buf);
-		string path = buf;
-		return path;
-	}
+	extern string getXplanePath();
 
-	string getProjectPath() {
-		GlobalStore* instance = GlobalStore::getInstance();
-		return instance->getProperty("dllDirectory") + "projectJar/";
-	}
+	extern string getProjectPath();
 
-	string getAircraftPath() {
-		string projectPath = getProjectPath();
-		string aircraftPath = projectPath.substr(0, projectPath.find_last_of("\\"));
-		aircraftPath = aircraftPath.substr(0, aircraftPath.find_last_of("\\"));
-		aircraftPath = aircraftPath.substr(0, aircraftPath.find_last_of("\\"));
-		aircraftPath = aircraftPath.substr(0, aircraftPath.find_last_of("\\"))+"\\";
+	extern string getAircraftPath();
 
-		return aircraftPath;
-	}
+	extern jstring getProjectDirectory(JNIEnv * e, jobject o);
 
-}
+	extern std::shared_ptr<JNIWrapper> getCurrentJNI();
+
+	extern jstring getXPlaneDirectory(JNIEnv * e, jobject o);
+
+	extern jstring getAircraftDirectory(JNIEnv * e, jobject o);
+
+} 
