@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{E6295C8F-28B6-42AB-8800-B9F4B45ED4A2}</ProjectGuid>
     <RootNamespace>Project2</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -78,7 +78,7 @@
     <TargetName>win</TargetName>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
-    <OutDir>E:\Magknight Github\787\plugins\FMC\64</OutDir>
+    <OutDir>$(Platform)\$(Configuration)\out</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetExt>.xpl</TargetExt>
@@ -106,13 +106,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\omer\Desktop\HTML RENDER\ultralight-1.9.1\include;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\CHeaders\Widgets;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\CHeaders\Wrappers;C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\CHeaders\XPLM;$(AWE_DIR)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\packages\XPSDK.3.0.1-alpha2\content\CHeaders\Widgets;..\packages\XPSDK.3.0.1-alpha2\content\CHeaders\Wrappers;..\packages\XPSDK.3.0.1-alpha2\content\CHeaders\XPLM;.\include;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WINDLL;_USRDLL;_WINDOWS;IBM=1;XPLM200=1;XPLM210=1;XPLM300=1;_WINSOCK_DEPRECATED_NO_WARNINGS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies>Opengl32.lib;odbc32.lib;odbccp32.lib;XPLM_64.lib;XPWidgets_64.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\omer\Desktop\X-Plane 11 SDK 3.0\SDK\Libraries\Win;C:\Users\omer\Desktop\HTML RENDER\ultralight-1.9.1\lib\win\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\packages\XPSDK.3.0.1-alpha2\content\Libraries\Win;C:\Users\omer\Desktop\HTML RENDER\ultralight-1.9.1\lib\win\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -163,6 +163,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CallbackInterface.cpp" />
+    <ClCompile Include="CHeaders\Wrappers\XPCBroadcaster.cpp" />
+    <ClCompile Include="CHeaders\Wrappers\XPCDisplay.cpp" />
+    <ClCompile Include="CHeaders\Wrappers\XPCListener.cpp" />
+    <ClCompile Include="CHeaders\Wrappers\XPCProcessing.cpp" />
+    <ClCompile Include="CHeaders\Wrappers\XPCWidget.cpp" />
+    <ClCompile Include="CHeaders\Wrappers\XPCWidgetAttachments.cpp" />
     <ClCompile Include="commands\CommandInterface.cpp" />
     <ClCompile Include="Datarefs\Dref.cpp" />
     <ClCompile Include="Datarefs\DrefDouble.cpp" />
@@ -199,6 +205,31 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CallbackInterface.h" />
+    <ClInclude Include="CHeaders\Widgets\XPStandardWidgets.h" />
+    <ClInclude Include="CHeaders\Widgets\XPUIGraphics.h" />
+    <ClInclude Include="CHeaders\Widgets\XPWidgetDefs.h" />
+    <ClInclude Include="CHeaders\Widgets\XPWidgets.h" />
+    <ClInclude Include="CHeaders\Widgets\XPWidgetUtils.h" />
+    <ClInclude Include="CHeaders\Wrappers\XPCBroadcaster.h" />
+    <ClInclude Include="CHeaders\Wrappers\XPCDisplay.h" />
+    <ClInclude Include="CHeaders\Wrappers\XPCListener.h" />
+    <ClInclude Include="CHeaders\Wrappers\XPCProcessing.h" />
+    <ClInclude Include="CHeaders\Wrappers\XPCWidget.h" />
+    <ClInclude Include="CHeaders\Wrappers\XPCWidgetAttachments.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMCamera.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMDataAccess.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMDefs.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMDisplay.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMGraphics.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMInstance.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMMap.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMMenus.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMNavigation.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMPlanes.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMPlugin.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMProcessing.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMScenery.h" />
+    <ClInclude Include="CHeaders\XPLM\XPLMUtilities.h" />
     <ClInclude Include="commands\CommandInterface.h" />
     <ClInclude Include="Datarefs\Dref.h" />
     <ClInclude Include="Datarefs\DrefDouble.h" />
@@ -233,6 +264,46 @@
     <ClInclude Include="modules\Module.h" />
     <ClInclude Include="modules\ModuleHandler.h" />
     <ClInclude Include="utility\Logger.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="license.txt" />
+    <Text Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Libraries\Win\XPLM_64.lib" />
+    <Library Include="Libraries\Win\XPWidgets_64.lib" />
+    <Library Include="lib\glew\glew32.lib" />
+    <Library Include="lib\glew\glew32s.lib" />
+    <Library Include="sdl\SDL2.lib" />
+    <Library Include="sdl\SDL2main.lib" />
+    <Library Include="sdl\SDL2_image.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Delphi\Widgets\XPStandardWidgets.pas" />
+    <None Include="Delphi\Widgets\XPUIGraphics.pas" />
+    <None Include="Delphi\Widgets\XPWidgetDefs.pas" />
+    <None Include="Delphi\Widgets\XPWidgets.pas" />
+    <None Include="Delphi\Widgets\XPWidgetUtils.pas" />
+    <None Include="Delphi\XPLM\XPLMCamera.pas" />
+    <None Include="Delphi\XPLM\XPLMDataAccess.pas" />
+    <None Include="Delphi\XPLM\XPLMDefs.pas" />
+    <None Include="Delphi\XPLM\XPLMDisplay.pas" />
+    <None Include="Delphi\XPLM\XPLMGraphics.pas" />
+    <None Include="Delphi\XPLM\XPLMInstance.pas" />
+    <None Include="Delphi\XPLM\XPLMMap.pas" />
+    <None Include="Delphi\XPLM\XPLMMenus.pas" />
+    <None Include="Delphi\XPLM\XPLMNavigation.pas" />
+    <None Include="Delphi\XPLM\XPLMPlanes.pas" />
+    <None Include="Delphi\XPLM\XPLMPlugin.pas" />
+    <None Include="Delphi\XPLM\XPLMProcessing.pas" />
+    <None Include="Delphi\XPLM\XPLMScenery.pas" />
+    <None Include="Delphi\XPLM\XPLMUtilities.pas" />
+    <None Include="Libraries\Mac\XPLM.framework\XPLM" />
+    <None Include="Libraries\Mac\XPWidgets.framework\XPWidgets" />
+    <None Include="lib\glew\glew32.dll" />
+    <None Include="packages.config" />
+    <None Include="sdl\SDL2.dll" />
+    <None Include="sdl\SDL2_image.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -9,6 +9,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{88b21cf7-915b-4c03-931c-6f876877afcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\Win">
+      <UniqueIdentifier>{8af8b91f-9d45-4046-9def-b72397e1be8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\Mac">
+      <UniqueIdentifier>{44c02b4a-0390-4ed1-835c-eafb5654ec30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\Mac\XPWidgets.framework">
+      <UniqueIdentifier>{215957c6-a641-4e71-be80-997e728d427f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\Mac\XPLM.framework">
+      <UniqueIdentifier>{d13b9669-ef01-4254-869b-70577369d88d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Delphi">
+      <UniqueIdentifier>{bd1e329e-98b1-4408-b358-bd316dc6edca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Delphi\XPLM">
+      <UniqueIdentifier>{8cc18cf0-0af3-45d5-ad0f-096cde4464fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Delphi\Widgets">
+      <UniqueIdentifier>{fe94accf-cd74-42b7-8d19-aebef94002e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CHeaders">
+      <UniqueIdentifier>{00f96a5e-3af1-4f04-81eb-c24880a69165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CHeaders\XPLM">
+      <UniqueIdentifier>{29c79aaa-7cc0-4402-a7d3-e2a5470c5972}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CHeaders\Wrappers">
+      <UniqueIdentifier>{e6902342-81d7-4892-bd2c-4020ab68ab5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CHeaders\Widgets">
+      <UniqueIdentifier>{5286bd10-40d1-4815-a6a3-faa5adc28dba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="utility\Logger.cpp">
@@ -113,6 +149,24 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CHeaders\Wrappers\XPCWidgetAttachments.cpp">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="CHeaders\Wrappers\XPCWidget.cpp">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="CHeaders\Wrappers\XPCProcessing.cpp">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="CHeaders\Wrappers\XPCListener.cpp">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="CHeaders\Wrappers\XPCDisplay.cpp">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="CHeaders\Wrappers\XPCBroadcaster.cpp">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utility\Logger.h">
@@ -170,5 +224,166 @@
     <ClInclude Include="Datarefs\DrefStore.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMUtilities.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMScenery.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMProcessing.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMPlugin.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMPlanes.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMNavigation.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMMenus.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMMap.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMInstance.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMGraphics.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMDisplay.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMDefs.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMDataAccess.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\XPLM\XPLMCamera.h">
+      <Filter>CHeaders\XPLM</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\Wrappers\XPCWidgetAttachments.h">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\Wrappers\XPCWidget.h">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\Wrappers\XPCProcessing.h">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\Wrappers\XPCListener.h">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\Wrappers\XPCDisplay.h">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\Wrappers\XPCBroadcaster.h">
+      <Filter>CHeaders\Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\Widgets\XPWidgetUtils.h">
+      <Filter>CHeaders\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\Widgets\XPWidgets.h">
+      <Filter>CHeaders\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\Widgets\XPWidgetDefs.h">
+      <Filter>CHeaders\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\Widgets\XPUIGraphics.h">
+      <Filter>CHeaders\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeaders\Widgets\XPStandardWidgets.h">
+      <Filter>CHeaders\Widgets</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="README.txt" />
+    <Text Include="license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Libraries\Win\XPWidgets_64.lib">
+      <Filter>Libraries\Win</Filter>
+    </Library>
+    <Library Include="Libraries\Win\XPLM_64.lib">
+      <Filter>Libraries\Win</Filter>
+    </Library>
+    <Library Include="sdl\SDL2.lib" />
+    <Library Include="sdl\SDL2main.lib" />
+    <Library Include="sdl\SDL2_image.lib" />
+    <Library Include="lib\glew\glew32.lib" />
+    <Library Include="lib\glew\glew32s.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Libraries\Mac\XPWidgets.framework\XPWidgets">
+      <Filter>Libraries\Mac\XPWidgets.framework</Filter>
+    </None>
+    <None Include="Libraries\Mac\XPLM.framework\XPLM">
+      <Filter>Libraries\Mac\XPLM.framework</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMUtilities.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMScenery.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMProcessing.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMPlugin.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMPlanes.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMNavigation.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMMenus.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMMap.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMInstance.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMGraphics.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMDisplay.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMDefs.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMDataAccess.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\XPLM\XPLMCamera.pas">
+      <Filter>Delphi\XPLM</Filter>
+    </None>
+    <None Include="Delphi\Widgets\XPWidgetUtils.pas">
+      <Filter>Delphi\Widgets</Filter>
+    </None>
+    <None Include="Delphi\Widgets\XPWidgets.pas">
+      <Filter>Delphi\Widgets</Filter>
+    </None>
+    <None Include="Delphi\Widgets\XPWidgetDefs.pas">
+      <Filter>Delphi\Widgets</Filter>
+    </None>
+    <None Include="Delphi\Widgets\XPUIGraphics.pas">
+      <Filter>Delphi\Widgets</Filter>
+    </None>
+    <None Include="Delphi\Widgets\XPStandardWidgets.pas">
+      <Filter>Delphi\Widgets</Filter>
+    </None>
+    <None Include="packages.config" />
+    <None Include="sdl\SDL2.dll" />
+    <None Include="sdl\SDL2_image.dll" />
+    <None Include="lib\glew\glew32.dll" />
   </ItemGroup>
 </Project>
