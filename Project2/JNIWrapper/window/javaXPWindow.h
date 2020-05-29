@@ -1,6 +1,6 @@
 #pragma once
 
-#include <ImGUIIntegration.h>
+#include <JNIWrapper/ImGUIIntegration.h>
 #include <iostream>
 #include <string>
 #include <utility/Logger.h>
